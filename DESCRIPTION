@@ -1,0 +1,18 @@
+Package: aou.verily
+Type: Package
+Title: Sets environment variables for Verily workbench
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Jeffrey", "Annis",
+      email = "jeffrey.s.annis@vumc.org",
+      role = c("aut", "cre")
+    )
+  )
+Description: Discovers and exports workspace variables into environment for other downstream packages/use.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    jsonlite
+RoxygenNote: 7.3.3
