@@ -52,7 +52,7 @@ get_google_project <- function()
 
 get_bucket <- function()
 {
-  resource_list_res <- fromJSON(system("wb resource list --format=json --type=GCS_BUCKET", intern = TRUE))
+  resource_list_res <- jsonlite::fromJSON(system("wb resource list --format=json --type=GCS_BUCKET", intern = TRUE))
   bucket <- resource_list_res$bucketName
   bucket <- paste0("gs://", bucket)
   bucket
@@ -62,7 +62,7 @@ get_workspace_cdr <- function() {
 
   # Get resources
   resources_json <- system("wb resource list --format=json", intern = TRUE)
-  resources <- fromJSON(resources_json)
+  resources <- jsonlite::fromJSON(resources_json)
 
   # Find BigQuery datasets
   is_bq <- resources$resourceType %in% c("BQ_DATASET", "BIGQUERY_DATASET")
