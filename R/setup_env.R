@@ -74,7 +74,7 @@ get_workspace_cdr <- function() {
   }
 
   # Filter ONLY main CDR datasets (e.g., C2024Q3R8)
-  is_cdr <- grepl("^C[0-9]{4}Q[0-9]+R[0-9]+$", bq_datasets$datasetId)
+  is_cdr <- grepl("^(C|R)[0-9]{4}Q[0-9]+R[0-9]+$", bq_datasets$datasetId)
   cdr_datasets <- bq_datasets[is_cdr, ]
 
   if (nrow(cdr_datasets) == 0) {
