@@ -53,7 +53,7 @@ get_google_project <- function()
 get_bucket <- function()
 {
   resource_list_res <- jsonlite::fromJSON(system("wb resource list --format=json --type=GCS_BUCKET", intern = TRUE))
-  bucket <- resource_list_res$bucketName
+  bucket <- resource_list_res$bucketName[1]
   bucket <- paste0("gs://", bucket)
   bucket
 }
